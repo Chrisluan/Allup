@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     gap:30,
     display:'flex',
     alignItems:'center',
-    width:'100%',
+    width:300,
   },
   logo: {
     fontWeight:'bold',
