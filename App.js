@@ -5,7 +5,8 @@ export default function App() {
   return (
     <View style={styles.body}>
     <View style={styles.generalContainer}>
-    <View style={{display:'flex', gap:20, alignItems:'center'}}>
+          <View style={styles.loginContainer}>
+          <View style={{display:'flex', gap:20, alignItems:'center'}}>
       <Text style={styles.logo}>
           Nodues
         </Text>
@@ -13,27 +14,25 @@ export default function App() {
               Log-in or create an account
           </Text>
          </View>
-        
-          <View style={styles.loginContainer}>
           <View style={{width:'80%'}}>
-          <Text style={{color:'white', marginVertical:6}}>
+          <Text style={{color:'#235789', marginVertical:6}}>
             Email:
           </Text>
               <TextInput style={styles.textInput}/>
-          <Text style={{color:'white', marginVertical:6}}>
+          <Text style={{color:'#235789', marginVertical:6}}>
             Password:
           </Text>
               <TextInput style={styles.textInput}/>
           </View>
           
           <View style={{display:'flex', justifyContent:'center',width:'80%', flexDirection:'row', gap:20}}>
-            <Pressable style={styles.buttons}><Text style={{color:'white'}}>Login</Text></Pressable>
-            <Pressable color={'#161925'} style={styles.buttons}><Text style={{color:'white'}}>Register</Text></Pressable>
+            <Pressable style={styles.buttons}><Text style={{color:'#235789'}}>Login</Text></Pressable>
+            <Pressable color={'#161925'} style={styles.buttons}><Text style={{color:'#235789',}}>Register</Text></Pressable>
           </View>
           </View>
 
     </View>
-      
+      <Text style={{textAlign:'center'}}>Copyright © - All rights reserved to Chris & Nodues</Text>
     </View>
   );
 }
@@ -41,11 +40,11 @@ export default function App() {
 const styles = StyleSheet.create({
   
   body:{
+    gap:20,
     color:'white',
     paddingHorizontal:40,
     width:'100%',
     height:'100%',
-    background: 'background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);',
     display:'flex',
     justifyContent: 'center',
     alignItems:'center',
@@ -58,30 +57,35 @@ const styles = StyleSheet.create({
   },
   logo: {
     fontWeight:'bold',
-    fontSize:34,
+    fontSize:60,
   }, 
   text:{
-    fontSize:24,
+    fontSize:20,
+    
   },
   buttons:{
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,
     width:'45%',
-    borderRadius: 4,
     elevation: 0,
-    backgroundColor: 'black',
+    backgroundColor: '#FDFFFC',
+    borderWidth:1,
+    borderColor:'#235789',
   },
   textInput:{
     padding:5,
     paddingHorizontal:15,
     width:'100%',
     height:40,
-    borderRadius:5,
     backgroundColor:'white',
+    borderWidth:1,
+    borderColor:'#235789',
+    color:'#235789'
   },
   loginContainer:{
-    borderRadius:20,
+    borderWidth:2,
+    borderColor:'#235789',
     gap:20,
     display:'flex',
     justifyContent:'center',
@@ -89,6 +93,6 @@ const styles = StyleSheet.create({
     width:'100%',
     height:'fit-content',
     paddingVertical:40,
-    backgroundColor:'#235789',
+    backgroundColor:'#fdfffc',
   }
 });
