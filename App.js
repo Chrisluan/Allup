@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, TextInput, Button, Pressable, Text, View } from 'react-native';
+import { StyleSheet, TouchableHighlight, TextInput, Pressable, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.body}>
@@ -8,31 +8,36 @@ export default function App() {
           <View style={styles.loginContainer}>
           <View style={{display:'flex', gap:20, alignItems:'center'}}>
       <Text style={styles.logo}>
-          Nodues
+          Allup
         </Text>
           <Text style={styles.text}>
-              Log-in or create an account
+              Log-in to get better!
           </Text>
          </View>
           <View style={{width:'80%'}}>
           <Text style={{color:'#235789', marginVertical:6}}>
             Email:
           </Text>
-              <TextInput style={styles.textInput}/>
+              <TextInput placeholder='example@email.com' style={styles.textInput}/>
           <Text style={{color:'#235789', marginVertical:6}}>
             Password:
           </Text>
-              <TextInput style={styles.textInput}/>
+              <TextInput placeholder='Your password' style={styles.textInput}/>
           </View>
           
           <View style={{display:'flex', justifyContent:'center',width:'80%', flexDirection:'row', gap:20}}>
-            <Pressable style={styles.buttons}><Text style={{color:'#235789'}}>Login</Text></Pressable>
-            <Pressable color={'#161925'} style={styles.buttons}><Text style={{color:'#235789',}}>Register</Text></Pressable>
+            <TouchableHighlight style={{width:'100%'}} onPress={() => {this.props.onPress()}} underlayColor={"blue"} activeOpacity={0.7}>
+              <Pressable style={styles.buttons}><Text style={{color:'#235789'}}>Login</Text></Pressable>
+            </TouchableHighlight>
+            
           </View>
+          <Text style={{textAlign:'center'}}>
+              Still do not have an account? <a href='/'>Click here</a> to register.
+            </Text>
           </View>
 
     </View>
-      <Text style={{textAlign:'center'}}>Copyright © - All rights reserved to Chris & Nodues</Text>
+      <Text style={{textAlign:'center'}}>© Copyright - All rights reserved to Chris & Allup</Text>
     </View>
   );
 }
@@ -67,8 +72,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,
-    width:'45%',
-    elevation: 0,
+    width:'100%',
     backgroundColor: '#FDFFFC',
     borderWidth:1,
     borderColor:'#235789',
