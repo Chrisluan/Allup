@@ -13,7 +13,7 @@ export default function Routes(){
         <Stack.Navigator>
             <Stack.Screen name="Identify" options={{headerShown:false}} component={Identify}/>
             <Stack.Screen name="Home" options={{headerShown:false}} component={Home}/>
-            <Stack.Screen name="Register" options={{headerShown:false}} component={Register}/>
+            <Stack.Screen name="Register" options={{headerShown:true}} component={Register}/>
         </Stack.Navigator>
     )
 }

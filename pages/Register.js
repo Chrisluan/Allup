@@ -15,7 +15,7 @@ export default function Register() {
 
   
   async function CheckAccount() {
-    let response = await fetch(`http://192.168.0.2:9900/checkRegister?email=${_email}`, {
+    let response = await fetch(`http://192.168.0.3:9900/checkRegister?email=${_email}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -31,7 +31,7 @@ export default function Register() {
   
   async function Register() {
     if (await CheckAccount()) {
-      let request = await fetch('http://192.168.0.2:9900/create', {
+      let request = await fetch('http://192.168.0.3:9900/create', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

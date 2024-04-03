@@ -11,7 +11,7 @@ export default function Identify() {
   const [error, setError] = useState("");
 
   async function LogIn(){
-    let request = await fetch(`http://192.168.0.2:9900/checkAccount?email=${_email}&password=${_pass}`, {
+    let request = await fetch(`http://192.168.0.3:9900/checkAccount?email=${_email}&password=${_pass}`, {
       method:'GET',
       headers:{
         'Accept':'application/json',

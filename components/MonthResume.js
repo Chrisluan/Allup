@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react'
 import { HomeStyles } from '../styles/HomeStyles'
 import { AntDesign } from '@expo/vector-icons';
 
-export default function MonthResume({userID}) {
+export default function MonthResume({userData}) {
   const [historyData, setHistoryData] = useState([]);
   useEffect(()=>{
     async function fetchHistory() {
-      let request = await fetch(`http://192.168.0.2:9900/paymenthistory/${userID}`, {
+      console.log(userData.id)
+      let request = await fetch(`http://192.168.0.3:9900/paymenthistory/${userData.id}`, {
         method:'GET',
         headers:{
           'Accept':'application/json',
@@ -15,12 +16,10 @@ export default function MonthResume({userID}) {
         }
       });
       let response = await request.json();
-      console.log(await response) 
-      console.log(await response[0].monthValue);
       setHistoryData(response);
     }
     fetchHistory();
-  }, []);
+  }, [userData]);
   
     
   return (

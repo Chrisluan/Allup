@@ -1,14 +1,16 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from './Colors';
 export const Enter = StyleSheet.create({
     body:{
-      gap:20,
+      gap:30,
       color:'white',
-      paddingHorizontal:40,
+      paddingHorizontal:20,
       width:'100%',
       height:'100%',
       display:'flex',
       justifyContent: 'center',
       alignItems:'center',
+      backgroundColor:Colors.primary[50]
     },
     generalContainer:{
       gap:30,
@@ -18,7 +20,7 @@ export const Enter = StyleSheet.create({
     },
     logo: {
       fontWeight:'bold',
-      fontSize:50,
+      fontSize:65,
     }, 
     text:{
       fontSize:20,
@@ -45,7 +47,7 @@ export const Enter = StyleSheet.create({
     },
     loginContainer:{
       borderWidth:2,
-      borderColor:'#235789',
+      borderColor:Colors.primary[20],
       gap:20,
       display:'flex',
       justifyContent:'center',

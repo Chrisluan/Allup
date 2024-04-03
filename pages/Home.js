@@ -7,13 +7,13 @@ import { AntDesign } from '@expo/vector-icons';
 import MonthResume from '../components/MonthResume.js'
 export default function Home({route}) {
   const { userData } = route.params;
-  
+  console.log("From Home Page: " +userData.id)
   return (
     
     <View style={{display:'flex', alignItems:'center', gap:20}}>
       <StatusBar backgroundColor={Colors.primary.base}></StatusBar>
       <NavBar UserName={userData.userName}/>
-      <MonthResume userData={userData.id}/>
+      <MonthResume userData={userData}/>
     </View>
   )
 }

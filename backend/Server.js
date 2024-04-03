@@ -1,5 +1,4 @@
 const exp = require('express');
-const sql2 = require('mysql2');
 const mysql = require('mysql')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -10,10 +9,10 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host:process.env.dbHostName,
-    user:process.env.dbUser,
-    password: process.env.dbPass,
-    database:process.env.dbSchema
+    host:"localhost",
+    user:"root",
+    password: "chrisluan123123",
+    database:"nodues"
 })
 
 //Routes
@@ -85,7 +84,7 @@ app.get('/checkRegister', async(req,res)=>{
             return res.status(404).json({ error: "User not found" });
         }
         console.log(data[0])
-        return res.json(data[0]); // Assuming you only expect one user with this email/password combination
+        return res.json(data[0]);
     });
    
 });
@@ -104,7 +103,7 @@ app.get('/checkAccount', async(req,res)=>{
         if(data.length === 0) {
             return res.status(404).json({ error: "User not found" });
         }
-        return res.json(data[0]); // Assuming you only expect one user with this email/password combination
+        return res.json(data[0]);
     });
 });
 let port = 9900;
