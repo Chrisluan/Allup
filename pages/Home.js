@@ -13,7 +13,6 @@ export default function Home({route}) {
     <View style={{display:'flex', alignItems:'center', gap:20}}>
       <StatusBar backgroundColor={Colors.primary.base}></StatusBar>
       <NavBar UserName={userData.userName}/>
-     
       <MonthResume userData={userData.id}/>
     </View>
   )

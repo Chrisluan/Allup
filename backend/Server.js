@@ -10,15 +10,16 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'chrisluan123123',
-    database:'nodues'
+    host:process.env.dbHostName,
+    user:process.env.dbUser,
+    password: process.env.dbPass,
+    database:process.env.dbSchema
 })
 
 //Routes
 
 app.get('/', (req, res) =>{
+    
     return res.json("From backend")
 })
 
