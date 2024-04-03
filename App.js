@@ -1,9 +1,13 @@
 import { React } from 'react';
-import { Text } from 'react-native';
-import Identify from './pages/Identify';
+import Routes from './routes';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 export default function App() {
   return (
-    <Identify/>
+    <NavigationContainer>
+      <StatusBar />
+      <Routes/>
+    </NavigationContainer>
   );
 }
 

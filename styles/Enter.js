@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-export const styles = StyleSheet.create({
+export const Enter = StyleSheet.create({
     body:{
       gap:20,
       color:'white',
